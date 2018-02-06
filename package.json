@@ -1,0 +1,21 @@
+{
+  "name": "gh-release-stats",
+  "version": "0.0.0",
+  "description": "A command line program for analysing GitHub Releases download stats",
+  "main": "bin/main.js",
+  "bin": {
+    "ghrs": "bin/main.js"
+  },
+  "keywords": [
+    "cli",
+    "nodejs",
+    "node",
+    "github"
+  ],
+  "author": "Zachary Guard",
+  "license": "MIT",
+  "preferGlobal": "true",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}

@@ -1,4 +1,4 @@
-# gh-release-stats
+# gh-releases-stats
 
 A command line program for analysing GitHub Releases download stats.
 
@@ -8,4 +8,4 @@ A command line program for analysing GitHub Releases download stats.
 
 ## Installation
 
-`npm i -g gh-release-stats`
+`npm i -g gh-releases-stats`

@@ -8,4 +8,4 @@ A command line program for analysing GitHub Releases download stats.
 
 ## Installation
 
-Clone or download this repository then do `npm i -g .`.
+`npm i -g gh-release-stats`

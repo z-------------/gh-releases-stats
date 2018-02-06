@@ -1,6 +1,6 @@
 {
   "name": "gh-release-stats",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A command line program for analysing GitHub Releases download stats",
   "main": "bin/main.js",
   "bin": {
@@ -16,6 +16,7 @@
   "license": "MIT",
   "preferGlobal": "true",
   "dependencies": {
+    "minimist": "^1.2.0",
     "request": "^2.83.0"
   }
 }

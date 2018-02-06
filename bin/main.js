@@ -6,7 +6,7 @@ const request = require("request");
 const minimist = require("minimist");
 const package = require("../package.json");
 
-const USAGE_STRING = "Usage: ghrs [<username>/<repo name> [--by-type|--by-release]] [-v|-h]]";
+const USAGE_STRING = "Usage: ghrs [<username>/<repo name> [--by-type|--by-release]] [-v|-h]";
 const USER_AGENT = `gh-releases-stats v${package.version}`;
 
 const repoRegex = /\S+\/\S+/;

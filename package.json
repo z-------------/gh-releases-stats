@@ -18,5 +18,12 @@
   "dependencies": {
     "minimist": "^1.2.0",
     "request": "^2.83.0"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/z-------------/gh-releases-stats.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/z-------------/gh-releases-stats/issues"
   }
 }

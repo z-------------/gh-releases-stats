@@ -1,5 +1,5 @@
 {
-  "name": "gh-release-stats",
+  "name": "gh-releases-stats",
   "version": "0.1.0",
   "description": "A command line program for analysing GitHub Releases download stats",
   "main": "bin/main.js",

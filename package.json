@@ -1,10 +1,10 @@
 {
   "name": "gh-releases-stats",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A command line program for analysing GitHub Releases download stats",
-  "main": "bin/main.js",
+  "main": "lib/main.js",
   "bin": {
-    "ghrs": "bin/main.js"
+    "ghrs": "bin/cli.js"
   },
   "keywords": [
     "cli",

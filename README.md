@@ -2,6 +2,10 @@
 
 A Node module for analysing GitHub Releases download stats.
 
+## Installation
+
+`npm i [-g] gh-releases-stats`
+
 ## Command line usage
 
 `ghrs <username>/<repo name> [--by-type|--by-release|--list] [--mark-prereleases]`
@@ -43,8 +47,3 @@ ghrs.total(repo, (err, totalDownloadCount) => {
   /* a Number representing total downloads for all releases and types */
 })
 ```
-
-## Installation
-
-* `npm i [-g] gh-releases-stats`
-* or, clone/download this repo, `cd` to it, then `npm i [-g] .`

@@ -89,7 +89,3 @@ if (args["version"] || args["v"]) {
 } else {
   console.log("\nInvalid repository identifier.\n" + USAGE_STRING + "\n");
 }
-
-// ${zpadString(exts[i], 8)} : ${zpadString(map[exts[i]].toString(), 5)} downloads
-// ${releaseNameStr} : ${totalDownloadCountStr} downloads${isPrereleaseStr}
-// ${sumTotalDownloadCount(releases)} total downloads

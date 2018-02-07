@@ -47,7 +47,7 @@ if (args["version"] || args["v"]) {
           }
         }
 
-        console.log(`\n${totalDownloadCount} downloads of release '${args.tag}'\n`)
+        console.log(`\n${totalDownloadCount} downloads of release '${args.tag}'${release.prerelease ? " (pre-release)" : ""}\n`)
         console.log(utils.columnFormat([columnType, columnDownloadCount]));
         console.log("");
       } else {

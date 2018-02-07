@@ -27,7 +27,7 @@ if (args["version"] || args["v"]) {
       if (releases.hasOwnProperty(args.tag)) {
         let release = releases[args.tag];
 
-        let totalDownloadCount = utils.sum.releaseDownloadCounts(release.assets);
+        let totalDownloadCount = utils.sum.releaseDownloadCount(release.assets);
 
         let assetsSorted = release.assets.sort(function(a, b) {
           if (a.downloadCount > b.downloadCount) return -1;

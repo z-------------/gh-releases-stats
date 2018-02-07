@@ -24,8 +24,8 @@ let repo = "username/reponame"
 ghrs.list(repo, (err, releases) => {
   console.log(releases)
   /* an Array of releases, each with keys:
-     url, assetsUrl, uploadUrl, htmlUrl, id, tagName, targetCommitish, 
-     name, draft, author, prerelease, createdAt, publishedAt, assets, 
+     url, assetsUrl, uploadUrl, htmlUrl, id, tagName, targetCommitish,
+     name, draft, author, prerelease, createdAt, publishedAt, assets,
      tarballUrl, zipballUrl, body */
 })
 
@@ -36,7 +36,7 @@ ghrs.dict(repo, (err, releasesDict) => {
 
 ghrs.byType(repo, (err, typesDict) => {
   console.log(typesDict)
-  /* an Object with each type's file extension as keys, each with value downloadCount */
+  /* an Object with each type's file extension as keys, each with keys downloadCount and releasesCount */
 })
 
 ghrs.byRelease(repo, (err, releasesDict) => {

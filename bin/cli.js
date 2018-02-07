@@ -52,7 +52,7 @@ if (args["version"] || args["v"]) {
 
       for (let i = 0, l = types.length; i < l; i++) {
         columnType.push(types[i]);
-        columnDownloadCount.push(map[types[i]]);
+        columnDownloadCount.push(map[types[i]].downloadCount);
       }
 
       console.log("");

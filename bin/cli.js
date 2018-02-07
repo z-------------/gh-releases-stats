@@ -6,7 +6,7 @@ const minimist = require("minimist");
 const utils = require("../lib/utils.js");
 const ghrs = require("../lib/main.js");
 
-const USAGE_STRING = "Usage: ghrs <username>/<repo name> [--by-type|--by-release|--list] [--mark-prereleases]";
+const USAGE_STRING = "Usage: ghrs <username>/<repo name> [--tag=<tagname>|--by-type|--by-release|--list] [--mark-prereleases]";
 
 /* parse arguments */
 
@@ -21,7 +21,40 @@ if (args["version"] || args["v"]) {
 } else if (args["help"] || args["h"]) {
   console.log("\n" + USAGE_STRING + "\n");
 } else if (repo && utils.isValidRepoIdentifier(repo)) {
-  if (args["list"]) {
+  if (typeof args.tag === "string") {
+    ghrs.dict(repo, (err, releases) => {
+      if (err) throw err;
+      if (releases.hasOwnProperty(args.tag)) {
+        let release = releases[args.tag];
+
+        let totalDownloadCount = utils.sum.releaseDownloadCounts(release.assets);
+
+        let assetsSorted = release.assets.sort(function(a, b) {
+          if (a.downloadCount > b.downloadCount) return -1;
+          if (a.downloadCount < b.downloadCount) return 1;
+          return 0;
+        });
+        let columnType = [];
+        let columnDownloadCount = [];
+        for (let i = 0, l = assetsSorted.length; i < l; i++) {
+          let ext = utils.getFileExtension(assetsSorted[i].name);
+          let extIndex = columnType.indexOf(ext);
+          if (extIndex === -1) {
+            columnType.push(ext);
+            columnDownloadCount.push(assetsSorted[i].downloadCount);
+          } else {
+            columnDownloadCount[extIndex] += assetsSorted[i].downloadCount;
+          }
+        }
+
+        console.log(`\n${totalDownloadCount} downloads of release '${args.tag}'\n`)
+        console.log(utils.columnFormat([columnType, columnDownloadCount]));
+        console.log("");
+      } else {
+        console.log(`\nRelease with tag name '${args["tag"]}' not found. See existing releases using \`ghrs ${repo} --list\`.\n`);
+      }
+    });
+  } else if (args.list) {
     ghrs.list(repo, (err, releases) => {
       if (err) throw err;
 

@@ -10,7 +10,7 @@ A Node module for analysing GitHub Releases download stats.
 
 ## Command line usage
 
-`ghrs <username>/<repo name> [--by-type|--by-release|--list] [--mark-prereleases]`
+`ghrs <username>/<repo name> [--tag=<tagname>|--by-type|--by-release|--list] [--mark-prereleases]`
 
 ## Programmatic usage
 

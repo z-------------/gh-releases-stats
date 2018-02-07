@@ -2,6 +2,8 @@
 
 A Node module for analysing GitHub Releases download stats.
 
+[Try it on RunKit](https://npm.runkit.com/gh-releases-stats)
+
 ## Installation
 
 `npm i [-g] gh-releases-stats`

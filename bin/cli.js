@@ -6,7 +6,7 @@ const minimist = require("minimist");
 const utils = require("../lib/utils.js");
 const ghrs = require("../lib/main.js");
 
-const USAGE_STRING = "Usage: ghrs <username>/<repo name> [--tag=<tagname>|--by-type|--by-release|--list] [--mark-prereleases]";
+const USAGE_STRING = "Usage: ghrs <username>/<repo name> [--by-release [--filter=<glob>]|--by-type|--filter=<glob>|--list|--tag=<tagname>] [--mark-prereleases]";
 
 /* parse arguments */
 
@@ -93,7 +93,14 @@ if (args["version"] || args["v"]) {
       console.log("");
     });
   } else if (args["by-release"]) {
-    ghrs.byRelease(repo, (err, releases) => {
+    var glob = "*";
+    if (args["filter"]) {
+      glob = args["filter"];
+      console.log("Filtering by glob " + glob);
+    }
+    ghrs.byRelease(repo, {
+      filterGlob: glob
+    }, (err, releases) => {
       if (err) throw err;
 
       let columnTagName = Object.keys(releases);
@@ -115,8 +122,15 @@ if (args["version"] || args["v"]) {
       console.log("");
     });
   } else {
-    ghrs.total(repo, (err, total) => {
-      console.log(`\n${total} total downloads\n`);
+    var glob = "*";
+    if (args["filter"]) {
+      glob = args["filter"];
+      console.log("Filtering by glob " + glob);
+    }
+    ghrs.total(repo, {
+      filterGlob: glob
+    }, (err, total) => {
+      console.log(`\n${total}\n`);
     });
   }
 } else {

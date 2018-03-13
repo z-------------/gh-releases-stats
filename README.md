@@ -39,13 +39,19 @@ ghrs.byType(repo, (err, typesDict) => {
   /* an Object with each type's file extension as keys, each with keys downloadCount and releasesCount */
 })
 
-ghrs.byRelease(repo, (err, releasesDict) => {
+ghrs.byRelease(repo, {
+  // this object is optional
+  filterGlob: "*.deb"
+}, (err, releasesDict) => {
   console.log(releasesDict)
-  /* an Object with each releases's tagName as keys, each with keys downloadCount and prerelease */
+  /* an Object with each releases's tagName as keys, each with keys downloadCount and prerelease; asset filenames optionally filtered by filterGlob */
 })
 
-ghrs.total(repo, (err, totalDownloadCount) => {
+ghrs.total(repo, {
+  // this object is optional
+  filterGlob: "*.+(deb|AppImage)"
+}, (err, totalDownloadCount) => {
   console.log(totalDownloadCount)
-  /* a Number representing total downloads for all releases and types */
+  /* a Number representing total downloads for all releases and types; asset filenames optionally filtered by filterGlob */
 })
 ```

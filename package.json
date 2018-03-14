@@ -1,6 +1,6 @@
 {
   "name": "gh-releases-stats",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A command line program for analysing GitHub Releases download stats",
   "main": "lib/main.js",
   "bin": {

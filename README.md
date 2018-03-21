@@ -55,3 +55,7 @@ ghrs.total(repo, {
   /* a Number representing total downloads for all releases and types; asset filenames optionally filtered by filterGlob */
 })
 ```
+
+## Use as an API
+
+Send a request to `https://runkit.io/z-------------/gh-releases-stats-endpoint/branches/master/<owner>/<repo>`; total releases download count will be returned.
